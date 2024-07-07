@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+body {
+    max-width: 1440px;
+    min-width: 375px;
+    width: 100%;
+    height: 100vh;
+    background: rgb(20, 20, 20);
+}
+.chat-app {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.chat-app .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    max-width: 320px;
+    min-width: 300px;
+    width: 100%;
+    height: 100%;
+    background: rgb(30, 30, 30);
+}
+.chat-app .container .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 150px;
+}
+.chat-app .container .logo img {
+    width: 80px;
+    height: 90px;
+}
+.chat-app .container .logo h1 {
+    color: rgb(230, 230, 230);
+}
+.chat-app .container .nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: -80px;
+}
+.chat-app .container .nav-bar button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 48px;
+    padding: 0 10px 0 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+.chat-app .container .nav-bar button ion-icon {
+    font-size: 25px;
+}
+.chat-app .container .nav-bar .history {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    height: 250px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin: 10px 0;
+}
+.chat-app .container .nav-bar .history::-webkit-scrollbar {
+    display: none;
+}
+.chat-app .container .nav-bar .history .chat-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 45px;
+    width: 100%;
+    height: 45px;
+    margin: 5px 0;
+    padding: 0 10px 0 15px;
+    border-radius: 10px;
+    background: rgb(50, 50, 50);
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+.chat-app .container .nav-bar .history .chat-box.removing {
+    animation: fadeOut 0.5s forwards;
+}
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+.chat-app .container .nav-bar .history .chat-box.selected {
+    border: 2px solid rgb(100, 100, 250);
+}
+.chat-app .container .nav-bar .history .chat-box p {
+    color: rgb(230, 230, 230);
+}
+.chat-app .container .nav-bar .history .chat-box button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+    color: rgb(230, 230, 230);
+    font-size: 12px;
+}
+.chat-app .individual {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    padding: 0 20px;
+}
+.chat-app .individual button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    height: max-content;
+    border: none;
+    outline: none;
+    background: none;
+}
+.chat-app .individual button .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+.chat-app .individual button .avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+.chat-app .individual button .user {
+    width: fit-content;
+    height: fit-content;
+    margin: 0 10px;
+}
+.chat-app .individual button .user p {
+    color: rgb(230, 230, 230);
+    font-size: 15px;
+    font-weight: bold;
+}
+.chat-app .individual button:nth-child(2) {
+    color: rgb(230, 230, 230);
+    font-size: 25px;
+}
+.chat-app .wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: rgb(40, 40, 40);
+}
+.chat-app .wrapper .heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    width: 100%;
+    height: 80px;
+}
+.chat-app .wrapper .heading h1 {
+    color: rgb(230, 230, 230);
+}
+.chat-app .wrapper .chat-section {
+    max-width: 900px;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+.chat-app .wrapper .chat-section .your-chat {
+    max-width: 300px;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    margin-left: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: rgb(80, 80, 80);
+    word-wrap: break-word;
+}
+.chat-app .wrapper .chat-section .your-chat p {
+    color: rgb(230, 230, 230);
+    word-break: break-word;
+}
+.chat-app .wrapper .chat-section .device-chat {
+    max-width: 300px;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: rgb(100, 100, 100);
+    word-wrap: break-word;
+}
+.chat-app .wrapper .chat-section .device-chat p {
+    color: rgb(230, 230, 230);
+    word-break: break-word;
+}
+.chat-app .wrapper form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    height: 90px;
+    margin: 15px 0;
+}
+.chat-app .wrapper form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 45px;
+    margin: 0 6px;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 25px;
+    color: rgb(230, 230, 230);
+    background: rgb(60, 60, 60);
+}
+.chat-app .wrapper form input {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: rgb(60, 60, 60);
+    color: rgb(230, 230, 230);
+    font-size: 15px;
+}
